@@ -16,8 +16,173 @@ header nav ul {
   padding-bottom: 0.4rem;
   gap: 30px;
   overflow-x: auto;
+  text-align: center;
 }
 
-body {
-  background-image: url(billeder/baggrund.webp);
+header {
+  position: sticky;
+  top: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 499;
+  text-align: right;
+}
+
+.logo h1,
+header nav ul li a,
+h1,
+h3 {
+  font-family: "General Sans", sans-serif;
+}
+
+.logo h1 {
+  font-weight: 450;
+  color: #000000;
+  font-size: 2rem;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  position: relative; /* Add this line to make positioning relative to the parent */
+  left: 98px;
+  bottom: 17px;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: #000000;
+  margin: 3px 0;
+}
+
+h1 {
+  font-size: 1.6cm;
+  text-align: center;
+  font-weight: 350;
+}
+
+/*CSS til Om mig*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1%;
+}
+
+.ommig img {
+  width: 100%;
+  filter: grayscale(1) brightness(0.8);
+}
+
+.ommig img:hover {
+  filter: grayscale(0);
+}
+
+.container2,
+.container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container2 img,
+.container3 img {
+  width: 440px;
+  padding-left: 2%;
+  filter: grayscale(2) brightness(0.9);
+}
+
+.container2 img:hover,
+.container3 img:hover {
+  filter: grayscale(0);
+}
+
+.container3 {
+  padding-top: 1%;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.text1 {
+  padding: 2%;
+  line-height: 350%;
+  padding-left: 5.5%;
+}
+
+.text1 p {
+  text-align: center;
+}
+
+.text2 p {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: -338px;
+    width: 100%;
+  }
+
+  header nav ul.show {
+    display: flex;
+  }
+  header nav ul li a:hover {
+    color: lightgray;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+    font-weight: 450;
+  }
+
+  .burger-menu.line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger-menu.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger-menu.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
 }

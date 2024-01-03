@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  font-family: "General Sans", sans-serif;
+  background-image: url(billeder/baggrund.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -9,21 +17,121 @@ header {
 
 header nav ul {
   display: flex;
-  justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 0.4rem;
   gap: 30px;
   overflow-x: auto;
 }
 
-body {
-  background-image: url(billeder/baggrund.webp);
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 499;
+  text-align: right;
 }
 
 .logo h1,
-a {
+header nav ul li a {
+  font-family: "General Sans", sans-serif;
+}
+
+.logo h1 {
+  font-weight: 450;
+  color: #fff;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 3cm;
   color: white;
-  font-family: "GeneralSans-Semibold";
+  font-family: "General Sans", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 1.8cm;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  position: relative; /* Add this line to make positioning relative to the parent */
+  left: 98px;
+  bottom: 17px;
+  z-index: 1000;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.burger-menu.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media only screen and (max-width: 600px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: -338px;
+    width: 100%;
+  }
+
+  header nav ul.show {
+    display: flex;
+  }
+  header nav ul li a:hover {
+    color: lightgray;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+    font-weight: 450;
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 1cm;
+    color: white;
+    font-family: "General Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 1.8cm;
+  }
+
+  body {
+    margin: 0;
+    font-family: "General Sans", sans-serif;
+    background-image: url(billeder/mobilbaggrund.webp);
+    background-repeat: no-repeat;
+  }
+  h2 {
+    font-size: 1.5cm;
+    color: white;
+    font-family: "General Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 4.6cm;
+  }
 }
