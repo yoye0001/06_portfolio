@@ -45,7 +45,31 @@ header nav ul li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: 499;
-  text-align: right;
+  text-align: end;
+}
+header nav ul li a:hover {
+  color: lightgray;
+}
+
+a {
+  text-decoration: none;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  position: relative; /* Add this line to make positioning relative to the parent */
+  left: 98px;
+  bottom: 17px;
+  z-index: 1000;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: #000000;
+  margin: 3px 0;
 }
 
 .logo h1,
@@ -83,6 +107,13 @@ h1 {
   font-weight: 350;
 }
 
+.footer p {
+  text-align: center;
+  margin-top: 6%;
+  margin-bottom: 1%;
+  font-size: small;
+  font-weight: 100;
+}
 /*CSS til Om mig*/
 .container {
   display: grid;
@@ -103,12 +134,13 @@ h1 {
 .container3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
 }
 
 .container2 img,
 .container3 img {
-  width: 440px;
-  padding-left: 2%;
+  width: 100%;
+  max-width: 440px;
   filter: grayscale(2) brightness(0.9);
 }
 
@@ -118,7 +150,7 @@ h1 {
 }
 
 .container3 {
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 h3 {
@@ -145,6 +177,46 @@ p {
   text-align: justify;
 }
 
+/* 
+PORTFOLIO*/
+.section_grid_1-2,
+.section_grid2,
+.section_grid3,
+.section_grid4 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.col2 h1 {
+  text-align: right;
+  padding-right: 20%;
+  font-size: 1.2cm;
+  text-decoration: none;
+  color: #000000;
+}
+
+.col2 h1:hover,
+.col h1:hover {
+  color: lightgray;
+}
+.col h1 {
+  text-align: right;
+  padding-right: 40%;
+  font-size: 1.2cm;
+  text-decoration: none;
+  color: #000000;
+}
+
+/*Tema 2 */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+img {
+  width: 100%;
+}
 @media only screen and (max-width: 600px) {
   .burger-menu {
     display: flex;
@@ -169,20 +241,5 @@ p {
   .logo h1 {
     font-size: 1.6rem;
     font-weight: 450;
-  }
-
-  .burger-menu.line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
-  }
-
-  .burger-menu.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
-  }
-
-  .burger-menu.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
   }
 }

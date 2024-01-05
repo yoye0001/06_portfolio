@@ -16,15 +16,4 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.remove("show");
     });
   });
-
-  // Close the menu when clicking outside the menu
-  document.addEventListener("click", (event) => {
-    const isClickInside = navLinks.contains(event.target) || burgerMenu.contains(event.target);
-
-    if (!isClickInside) {
-      console.log("Clicked outside menu");
-      burgerMenu.classList.remove("active");
-      navLinks.classList.remove("show");
-    }
-  });
 });
