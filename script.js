@@ -1,19 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const burgerMenu = document.querySelector(".burger-menu");
-  const navLinks = document.querySelector("header nav ul");
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
 
-  burgerMenu.addEventListener("click", () => {
-    console.log("Burger clicked");
-    burgerMenu.classList.toggle("active");
-    navLinks.classList.toggle("show");
-  });
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
 
-  // Close the menu when a navigation item is clicked
-  document.querySelectorAll("header nav ul li a").forEach((item) => {
-    item.addEventListener("click", () => {
-      console.log("Link clicked");
-      burgerMenu.classList.remove("active");
-      navLinks.classList.remove("show");
-    });
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
   });
 });

@@ -9,27 +9,6 @@ header {
 
 header nav ul {
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 0.4rem;
-  gap: 30px;
-  overflow-x: auto;
-  text-align: center;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-header nav ul {
-  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -44,7 +23,7 @@ header nav ul li {
 header nav ul li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-weight: 499;
+  font-weight: 450;
   text-align: end;
 }
 header nav ul li a:hover {
@@ -55,23 +34,43 @@ a {
   text-decoration: none;
 }
 
-.burger-menu {
-  cursor: pointer;
-  display: none;
-  flex-direction: column;
-  position: relative; /* Add this line to make positioning relative to the parent */
-  left: 98px;
-  bottom: 17px;
-  z-index: 1000;
+.menu li {
+  margin-right: 20px;
 }
 
-.bar {
-  width: 25px;
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: lightgray;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
   height: 2px;
   background-color: #000000;
-  margin: 3px 0;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
 }
-
+.burger {
+  display: none;
+}
 .logo h1,
 header nav ul li a,
 h1,
@@ -92,6 +91,7 @@ h3 {
   position: relative; /* Add this line to make positioning relative to the parent */
   left: 98px;
   bottom: 17px;
+  z-index: 1000;
 }
 
 .bar {
@@ -212,34 +212,239 @@ PORTFOLIO*/
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  max-width: 1200px;
+  padding-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
 }
 
 img {
   width: 100%;
 }
+
+.grid img {
+  max-width: 503px;
+  padding-top: 4rem;
+  filter: grayscale(2) brightness(0.9);
+}
+
+.grid img:hover,
+.farve:hover {
+  filter: grayscale(0);
+}
+
+p a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.link p {
+  text-align: center;
+}
+p a:hover {
+  color: lightgray;
+}
+
+.grid p {
+  font-size: 1.1rem;
+  line-height: 180%;
+  margin-top: 9%;
+  max-width: 500px;
+  text-align: justify;
+}
+
+/* Tema 3 */
+
+.styletile img,
+.userstory img,
+.wireframes img,
+.brugertest img {
+  max-width: 1100px;
+  filter: grayscale(2) brightness(0.9);
+}
+
+.styletile img:hover,
+.userstory img:hover,
+.wireframes img:hover,
+.brugertest img:hover {
+  max-width: 1100px;
+  filter: grayscale(0);
+}
+
+.styletile,
+.userstory,
+.wireframes,
+.brugertest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 1200px;
+  padding-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+}
+
+.grid2 img {
+  max-width: 500px;
+  filter: grayscale(2) brightness(0.9);
+}
+
+.grid2 img:hover {
+  filter: grayscale(0);
+}
+/*tema 5*/
+.farve {
+  max-width: 1100px;
+  padding-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+  filter: grayscale(2) brightness(0.9);
+}
+
+/* arrow css */
+.span1,
+.span2 {
+  position: fixed;
+  font-size: 3vw; /* Use viewport width (vw) for responsive font size */
+  color: #000000;
+}
+
+.span2 {
+  top: 90%; /* Adjust this value to change the distance from the top */
+  right: 5%; /* Adjust this value to change the distance from the right */
+}
+
+.span1 {
+  top: 90%; /* Adjust this value to change the distance from the top */
+  left: 5%; /* Adjust this value to change the distance from the left */
+}
+
+.span1:hover,
+.span2:hover {
+  color: lightgray;
+}
+
 @media only screen and (max-width: 600px) {
-  .burger-menu {
-    display: flex;
-  }
-
-  header nav ul {
+  .menu {
     display: none;
-    flex-direction: column;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
     position: absolute;
-    top: 90px;
-    right: -338px;
+    top: 60px;
+    left: 0;
     width: 100%;
+    z-index: 1;
   }
 
-  header nav ul.show {
-    display: flex;
-  }
-  header nav ul li a:hover {
-    color: lightgray;
+  nav.active .menu li {
+    margin: 10px 20px;
   }
 
+  nav.active .menu a {
+    font-size: 18px;
+  }
   .logo h1 {
     font-size: 1.6rem;
     font-weight: 450;
   }
+
+  /*om mig*/
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .col2 h1,
+  .col h1 {
+    font-size: 1.6em;
+  }
+
+  .col2 {
+    margin-top: 5%;
+  }
+
+  .col h1 {
+    margin-top: 23%;
+  }
+
+  .footer p {
+    margin-top: 31%;
+  }
+
+  .ommig img {
+    margin-top: 4rem;
+    max-width: 300px;
+  }
+
+  .ommig {
+    margin: 0%;
+    padding: 0%;
+  }
+  .text1 h3 {
+    font-size: 0.8rem;
+    line-height: 130%;
+  }
+
+  .text1 p {
+    font-size: 0.7rem;
+    line-height: 130%;
+  }
+  .h3 h3 {
+    font-size: 1rem;
+  }
+  a {
+    font-size: small;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid p {
+    font-size: 0.8rem;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .span1,
+  .span2 {
+    font-size: 5vw; /* Adjust the font size for smaller screens */
+  }
+}
+
+.grid img {
+  padding-top: 1.5rem;
 }
