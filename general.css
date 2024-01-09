@@ -124,9 +124,8 @@ h2 {
     display: block;
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+    left: 70%;
+    width: 29%;
   }
 
   nav.active .menu li {
@@ -134,7 +133,7 @@ h2 {
   }
 
   nav.active .menu a {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .logo h1 {
